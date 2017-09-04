@@ -23,7 +23,7 @@ $(document).ready(function() {
 
 	loadTable();
 
-	$(function(){
+	/*$(function(){
 		// hide all content
 		$('.characteristics-list--item-content').hide();
 		$('.characteristics-list--item.active .characteristics-list--item-content').show();
@@ -37,7 +37,7 @@ $(document).ready(function() {
 				$(this).next().slideDown();
 			}
 		});
-	});
+	});*/
 
 
 

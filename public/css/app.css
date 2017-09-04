@@ -823,6 +823,9 @@ input[type="number"] {
 }
 .characteristics-list {
   list-style-type: none;
+  background: #fff;
+  border-radius: 3px;
+  padding: 20px;
   margin-top: 20px;
 }
 .characteristics-list--item {
@@ -831,30 +834,17 @@ input[type="number"] {
   padding: 15px 20px;
   margin-bottom: 3px;
 }
-.characteristics-list--item-title {
+.characteristics-list--item--title {
   font-size: 1.5rem;
   font-weight: 400;
   cursor: pointer;
 }
-.characteristics-list--item-title:after {
-  float: right;
-  content: '';
-  width: 15px;
-  height: 15px;
-  background: url('../image/icon/down-arrow.svg') no-repeat;
-  background-size: cover;
-}
 .characteristics-list--item-content {
-  padding-top: 20px;
+  font-size: 1rem;
+  list-style-type: none;
 }
 .characteristics-list--item-content-text {
-  margin: 10px 0;
-}
-.characteristics-list.active--item-title {
-  border-radius: 5px 5px 0 0;
-}
-.characteristics-list.active--item-title:after {
-  content: '\f056';
+  margin: 5px 0;
 }
 .char-list {
   font-size: 0.75rem;

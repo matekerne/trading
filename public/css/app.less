@@ -920,6 +920,9 @@ input {
 
 .characteristics-list {
 	list-style-type: none;
+	background: #fff;
+	border-radius: 3px;
+	padding: 20px;
 	margin-top: 20px;
 	&--item {
 		background: #fff;
@@ -927,36 +930,20 @@ input {
 		padding: 15px 20px;
 		margin-bottom: 3px;
 
-		&-title {
+		&--title {
 			font-size: 1.5rem;
 			font-weight: 400;
 			cursor: pointer;
-			&:after {
-				float: right;
-				content: '';
-				width: 15px;
-				height: 15px;
-				background: url('../image/icon/down-arrow.svg') no-repeat;
-				background-size: cover;
-			}
 		}
 		&-content {
-			padding-top: 20px;
+			font-size: 1rem;
+			list-style-type: none;
 			&-text {
-				margin: 10px 0;
+				margin: 5px 0;
 			}
 		}
 	}
-	&.active {
-		&--item {
-			&-title {
-				border-radius: 5px 5px 0 0;
-				&:after {
-					content: '\f056';
-				}
-			}
-		}
-	}
+
 }
 
 .char-list {

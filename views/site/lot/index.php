@@ -101,47 +101,42 @@
 
 				<ul class="characteristics-list">
 
-					<li class="characteristics-list--item active">
-						<h3 class="characteristics-list--item-title">Характеристики товара</h3>
-						<div class="characteristics-list--item-content">
+					<li class="characteristics-list--item--title">Характеристики товара
+						<ul class="characteristics-list--item-content">
 							<?php foreach($lotchars as $lotchar): ?>
-								<p class="characteristics-list--item-content-text"><?php print $lotchar; ?></p>
+								<li class="characteristics-list--item-content-text"><?php print $lotchar; ?></li>
 							<?php endforeach; ?>
-						</div>
+						</ul>
 					</li>
 
-					<li class="characteristics-list--item">
-						<h3 class="characteristics-list--item-title">Условия оплаты</h3>
-						<div class="characteristics-list--item-content">
+					<li class="characteristics-list--item--title">Условия оплаты
+						<ul class="characteristics-list--item-content">
 							<?php foreach($lots as $lot): ?>
-								<p class="characteristics-list--item-content-text"><?php print $lot['conditions_payment'] ?></p>
+								<li class="characteristics-list--item-content-text"><?php print $lot['conditions_payment'] ?></li>
 							<?php endforeach; ?>
-						</div>
+						</ul>
 					</li>
 
-					<li class="characteristics-list--item">
-						<h3 class="characteristics-list--item-title">Условия отгрузки</h3>
-						<div class="characteristics-list--item-content">
+					<li class="characteristics-list--item--title">Условия отгрузки
+						<ul class="characteristics-list--item-content">
 							<?php foreach($lots as $lot): ?>
-								<p class="characteristics-list--item-content-text"><?php print $lot['conditions_shipment'] ?></p>
+								<li class="characteristics-list--item-content-text"><?php print $lot['conditions_shipment'] ?></li>
 							<?php endforeach; ?>
-						</div>
+						</ul>
 					</li>
 
-					<li class="characteristics-list--item">
-						<h3 class="characteristics-list--item-title">Сроки отгрузки</h3>
-						<div class="characteristics-list--item-content">
+					<li class="characteristics-list--item--title">Сроки отгрузки
+						<ul class="characteristics-list--item-content">
 							<?php foreach($lots as $lot): ?>
-								<p class="characteristics-list--item-content-text"><?php print $lot['terms_shipment'] ?></p>
+								<li class="characteristics-list--item-content-text"><?php print $lot['terms_shipment'] ?></li>
 							<?php endforeach; ?>
-						</div>
+						</ul>
 					</li>
 
-					<li class="characteristics-list--item">
-						<h3 class="characteristics-list--item-title">Способ перевозки</h3>
-						<div class="characteristics-list--item-content">
-							<p class="characteristics-list--item-content-text">Перевозка осуществляется авто либо жд транспортом;</p>
-						</div>
+					<li class="characteristics-list--item--title">Способ перевозки
+						<ul class="characteristics-list--item-content">
+							<li class="characteristics-list--item-content-text">Перевозка осуществляется авто либо жд транспортом;</li>
+						</ul>
 					</li>
 				</ul>
 
