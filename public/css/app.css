@@ -589,8 +589,12 @@ input[type="number"] {
   width: 100% !important;
   margin: 10px 0;
 }
+.select2 .select2-selection--multiple {
+  height: 26px !important;
+  min-height: 26px !important;
+}
 .select2 .select2-selection__rendered {
-  padding: 5px 10px !important;
+  padding: 3px 10px !important;
 }
 .select2 .select2-selection__rendered .select2-selection__clear {
   display: none;
