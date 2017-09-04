@@ -24,14 +24,11 @@ class LotController extends Controller
 
 		$bet = new Bet();
 		$bets = $bet->get_all_by_each_lot($id);
-		// var_dump($bets); die();
+		// var_dump($lots); die();
 		$this->check_data($bets);
 
 		$date_time = str_replace(" ","-",$lots[0]['stop']);
 		$date_time_stop_auction = explode('-', $date_time);
-
-        $date_time_start = str_replace(" ","-",$lots[0]['start']);
-        $date_time_start_auction = explode('-', $date_time_start);
 
 		$names_mouths = [
 			'Jan' => '01',
@@ -52,11 +49,6 @@ class LotController extends Controller
 		$mounth = array_search($date_time_stop_auction[1], $names_mouths);
 		$day = $date_time_stop_auction[2];
 		$time = $date_time_stop_auction[3];
-
-        $yearStart = $date_time_start_auction[0];
-        $mounthStart = array_search($date_time_start_auction[1], $names_mouths);
-        $dayStart = $date_time_start_auction[2];
-        $timeStart = $date_time_start_auction[3];
 		
 		require_once(ROOT . '/views/site/lot/index.php');
 		return true;

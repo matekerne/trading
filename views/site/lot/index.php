@@ -21,6 +21,13 @@
 										</div>
 										<div class="auction-card__full-info-price">стартовая цена: <?php print $lot['price']; ?> руб.</div>
 									</div>
+
+									<div class="auction-card__full-info">
+										<div class="auction-card__full-info-user">
+											<!-- 5 участников -->
+										</div>
+										<div class="auction-card__full-info-price">количество: <?php print $lot['count']; ?> тонн.</div>
+									</div>
 								</div>
 							</div>
 
@@ -31,7 +38,9 @@
 							<div class="auction-card__full-timer-finish">
 								<?php 
 									$datetime = explode(' ', $lot['stop']);
-									$date = preg_replace('/-/', '.', $datetime[0]);
+									// $date = preg_replace('/-/', '.', $datetime[0]);
+									$parts_stop_date = explode('-', $datetime[0]);
+									$date = $parts_stop_date[2] . '.' . $parts_stop_date[1] . '.' . $parts_stop_date[0];
 									$time =  substr($datetime[1], 0, 5);
 								?>
 								до <?php print $time . ' ' . $date; ?>
@@ -88,15 +97,11 @@
 				<div id="dayStopAuction" style="display: none;"><?php print $day; ?></div>
 				<div id="timeStopAuction" style="display: none;"><?php print $time; ?></div>
 
-				<div id="yearStartAuction" style="display: none;"><?php print $yearStart; ?></div>
-				<div id="mounthStartAuction" style="display: none;"><?php print $mounthStart; ?></div>
-				<div id="dayStartAuction" style="display: none;"><?php print $dayStart; ?></div>
-				<div id="timeStartAuction" style="display: none;"><?php print $timeStart; ?></div>
-
 				<?php $lotchars = explode(", ", $lot['characteristics']); ?>
 
 				<ul class="characteristics-list">
-					<li class="characteristics-list--item">
+
+					<li class="characteristics-list--item active">
 						<h3 class="characteristics-list--item-title">Характеристики товара</h3>
 						<div class="characteristics-list--item-content">
 							<?php foreach($lotchars as $lotchar): ?>
@@ -104,16 +109,41 @@
 							<?php endforeach; ?>
 						</div>
 					</li>
+
 					<li class="characteristics-list--item">
-						<h3 class="characteristics-list--item-title">Условия доставки и оплаты</h3>
+						<h3 class="characteristics-list--item-title">Условия оплаты</h3>
 						<div class="characteristics-list--item-content">
-							<p class="characteristics-list--item-content-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-							<p class="characteristics-list--item-content-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, quibusdam?</p>
+							<?php foreach($lots as $lot): ?>
+								<p class="characteristics-list--item-content-text"><?php print $lot['conditions_payment'] ?></p>
+							<?php endforeach; ?>
 						</div>
 					</li>
 
-				</ul>
+					<li class="characteristics-list--item">
+						<h3 class="characteristics-list--item-title">Условия отгрузки</h3>
+						<div class="characteristics-list--item-content">
+							<?php foreach($lots as $lot): ?>
+								<p class="characteristics-list--item-content-text"><?php print $lot['conditions_shipment'] ?></p>
+							<?php endforeach; ?>
+						</div>
+					</li>
 
+					<li class="characteristics-list--item">
+						<h3 class="characteristics-list--item-title">Сроки отгрузки</h3>
+						<div class="characteristics-list--item-content">
+							<?php foreach($lots as $lot): ?>
+								<p class="characteristics-list--item-content-text"><?php print $lot['terms_shipment'] ?></p>
+							<?php endforeach; ?>
+						</div>
+					</li>
+
+					<li class="characteristics-list--item">
+						<h3 class="characteristics-list--item-title">Способ перевозки</h3>
+						<div class="characteristics-list--item-content">
+							<p class="characteristics-list--item-content-text">Перевозка осуществляется авто либо жд транспортом;</p>
+						</div>
+					</li>
+				</ul>
 
 			</div>
 
@@ -133,8 +163,8 @@
 								<?php 
 									$datetime = explode(' ', $bet['create_date']);
 									// $date = preg_replace('/-/', '.', $datetime[0]);
-									$parts_date = explode('-', $datetime[0]);
-									$date = $parts_date[2] . '.' . $parts_date[1] . '.' . $parts_date[0];
+									$parts_create_date = explode('-', $datetime[0]);
+									$date = $parts_create_date[2] . '.' . $parts_create_date[1] . '.' . $parts_create_date[0];
 									$time =  substr($datetime[1], 0, 5);
 								?>
 								<td class="table-align-right"><?php print $time . ' ' . $date; ?></td>

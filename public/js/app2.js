@@ -21,16 +21,17 @@ $('.table-collapse').click(function(){
 
 $(document).ready(function() {
 
-
 	loadTable();
 
 	$(function(){
 		// hide all content
 		$('.characteristics-list--item-content').hide();
+		$('.characteristics-list--item.active .characteristics-list--item-content').show();
 
 		$('.characteristics-list--item-title').click(function(){
 			$(this).parent().toggleClass('active').siblings().removeClass('active');
 			$('.characteristics-list--item-content').slideUp();
+
 
 			if(!$(this).next().is(":visible")) {
 				$(this).next().slideDown();
@@ -164,7 +165,7 @@ $(document).ready(function() {
 					char += '<input type="text" name="characteristics[]" placeholder="Характеристики" value="' + characteristics[key] + '">';
 				}
 				$("[name='characteristics[]']").remove();
-				$('.characteristics_list').prepend(char);
+				$('.characteristics_list label').append(char);
 				$('[name="price"]').val(response['price']);
 				$('[name="price_type"]').val(response['price_type']);
 				$('[name="step_bet"]').val(response['step_bet']);

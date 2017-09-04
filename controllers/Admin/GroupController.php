@@ -37,7 +37,6 @@ class GroupController extends Controller
 
 	public function edit()
 	{
-		//$id = \Router::get_id();
         $id = $_POST['id'];
 		$group = $this->group->show($id);
 
@@ -47,13 +46,6 @@ class GroupController extends Controller
 
         echo json_encode($response);
         return true;
-
-
-		// когда будет модальное окно написать так $this->check_data($user, 'ajax');
-		//$this->check_data($group);
-
-		/*require_once(ROOT . '/views/admin/group/edit.php');
-		return true;*/
 	}
 
 	public function update()
@@ -63,7 +55,7 @@ class GroupController extends Controller
 		$data = [];
 		$data['id'] = $_POST['id'];
 		$data['name'] = $_POST['name'];
-
+		// var_dump($data); die();
 		$group = $this->group->update($data);
 		$this->check_data($group, 'ajax');
 	}

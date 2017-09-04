@@ -13,7 +13,6 @@ class UserController extends Controller
 	{
 		// Чтобы отработала проверка авторизован пользователь или нет
 		parent::__construct();
-
 		$this->check_access('admin');
 		$this->user = new User();
 		$this->group = new Group();
@@ -53,9 +52,6 @@ class UserController extends Controller
 
 		$id = $_POST['user_id'];
 		$user = $this->user->show($id);
-
-		// $groups = $this->group->get_all();
-		// $user_groups = $this->create_select2_data('groups', $user['groups']);
 
 		$response = [];
 		$response['id'] = $user['id'];

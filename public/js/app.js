@@ -1,5 +1,3 @@
-// $(document).ready(function() {
-
   if ($('.auction-card').length < 4) {
     $('.auction-card').parent().parent().addClass('center');
   }
@@ -82,18 +80,6 @@
       }
     });
   }
-
-  // function redirect(url='') {
-  //     var protocol = window.location.protocol + '//';
-  //     var host = window.location.host;
-  //     var defaultUrl = '/';
-
-  //     if (url) {
-  //       window.location.replace(protocol + host + url);
-  //     } else {
-  //       window.location.replace(protocol + host + defaultUrl);
-  //     }
-  // }
 
   function createWinner(user_id, lot_id) {
     var action = '/winner/create';
@@ -195,7 +181,7 @@
 
         success: function(data) {
           var response = $.parseJSON(data);
-          console.log(response);
+          // console.log(response);
 
           if (action == '/user/update') {
             form.attr('action', '/user/create');
@@ -271,45 +257,6 @@
     });
   })
 
-  // // Отдельный ajax для авторизации
-  // $(document).on('submit', '.auth', function(e) {
-  // // $('.button-login').on('click', function(e) {
-  //   e.preventDefault();
-  //   // if (e.preventDefault) {
-  //   //   e.preventDefault();
-  //   // } else {
-  //   //   event.returnValue = false;
-  //   // }
-  //   // console.log(1);
-
-  //   var form = $(this);
-  //   var action = form.attr('action');
-  //   var method = form.attr('method');
-  //   var data = new FormData(form[0]);
-
-  //   $.ajax({
-  //     url: action,
-  //     type: method,
-  //     data: data,
-  //     processData: false,
-  //     cache: false,
-  //     contentType: false,
-
-  //     success: function(data) {
-  //       var response = $.parseJSON(data);
-  //       var errorMessage = $('.error').text();
-
-  //       redirect();
-  //     },
-
-  //     error: function(e) {
-  //       var error = $.parseJSON(e.responseText);
-  //       $('.error').text(error.message).show();
-  //     }
-
-  //   });
-  // });
-
   // Work with datatime
   $.datetimepicker.setLocale('ru');
   $('.datetimepicker').datetimepicker({
@@ -330,23 +277,16 @@
    format: 'd-m-Y H:i'
   });
 
-  var mounthStart = $('#mounthStartAuction').text();
-  var dayStart = $('#dayStartAuction').text();
-  var yearStart = $('#yearStartAuction').text();
-  var timeStart = $('#timeStartAuction').text();
-
   var mounth = $('#mounthStopAuction').text();
   var day = $('#dayStopAuction').text();
   var year = $('#yearStopAuction').text();
   var time = $('#timeStopAuction').text();
   var dateTime = mounth + ' ' + day + ' ' + year + ' ' + time;
-  var dateTimeStart = mounthStart + ' ' + dayStart + ' ' + yearStart + ' ' + timeStart;
   var countDownDate = new Date(dateTime).getTime();
-  var countDownDateStart = new Date(dateTimeStart).getTime();
 
   var x = setInterval(function() {
     var now = new Date();
-    var distance = countDownDateStart - now.getTime();
+    var distance = countDownDate - now.getTime();
     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
     var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
@@ -376,6 +316,7 @@
             document.getElementById('timer').innerHTML = 'Аукцион закончен';
 
             var winUser = $('#history-bets .bet:first-child').data('user-login');
+            console.log(winUser);
             var lot_status = $('.bet input[name=lot_status]').val();
             var user_id = $('#history-bets .bet:first-child').data('user-id');
             var lot_id = $('.bet input[name=lot_id]').val();
@@ -403,5 +344,3 @@
       });
     }
   }, 1000);
-
-// });

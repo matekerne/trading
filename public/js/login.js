@@ -1,4 +1,10 @@
-function redirect(url='') {
+$(document).ready(function() {
+  console.log(navigator.userAgent);
+});
+
+var url = '';
+
+function redirect(url) {
   var protocol = window.location.protocol + '//';
   var host = window.location.host;
   var defaultUrl = '/';

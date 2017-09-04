@@ -44,7 +44,7 @@ class Lot extends Model
     {
         $db = \DB::get_connection();
 
-        $sql = "SELECT l.id, l.name, l.characteristics, l.price, l.count, l.conditions_payment, l.conditions_shipment, l.terms_shipment, l.step_bet, l.start, l.stop, l.status, GROUP_CONCAT(DISTINCT g.name SEPARATOR ', ') AS groups FROM lots l LEFT JOIN lots_groups l_g ON l.id = l_g.lot_id LEFT JOIN groups g ON l_g.group_id = g.id WHERE l.id = :id GROUP BY l.id";
+        $sql = "SELECT l.id, l.name, l.characteristics, l.price, l.count, l.count_type, l.conditions_payment, l.conditions_shipment, l.terms_shipment, l.step_bet, l.start, l.stop, l.status, GROUP_CONCAT(DISTINCT g.name SEPARATOR ', ') AS groups FROM lots l LEFT JOIN lots_groups l_g ON l.id = l_g.lot_id LEFT JOIN groups g ON l_g.group_id = g.id WHERE l.id = :id GROUP BY l.id";
 
         $query = $db->prepare($sql);
 
@@ -61,6 +61,7 @@ class Lot extends Model
                 $lots[$i]['price'] = $row['price'];
                 $lots[$i]['groups'] = $row['groups'];
                 $lots[$i]['count'] = $row['count'];
+                $lots[$i]['count_type'] = $row['count_type'];
                 $lots[$i]['conditions_payment'] = $row['conditions_payment'];
                 $lots[$i]['conditions_shipment'] = $row['conditions_shipment'];
                 $lots[$i]['terms_shipment'] = $row['terms_shipment'];

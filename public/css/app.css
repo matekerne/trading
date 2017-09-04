@@ -16,7 +16,6 @@ html {
 .grid-body {
   max-width: 1200px;
   width: 100%;
-  height: 100%;
   margin: 0 auto;
 }
 .grid-body.grid-bg {
@@ -78,12 +77,17 @@ html {
 }
 .grid-expand {
   width: 100%;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
 }
 .grid-fix-medium {
   width: 240px;
 }
 .main-content {
+  display: block;
   margin-top: 60px;
 }
 .main-content.no-archive {
@@ -155,14 +159,30 @@ a {
   padding: 0 0 0 20px;
   z-index: 100001;
 }
+.header .header-logo {
+  width: 184px;
+  display: block;
+}
+.header .header-logo a {
+  display: block;
+}
 .header .header-logo img {
   height: 36px;
   display: block;
+  border: 0px;
 }
 .header .header-nav {
   border-left: 1px solid #EDEFF1;
   height: 60px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   margin-left: 20px;
   padding-left: 20px;
@@ -189,7 +209,15 @@ a {
 .header .header-logout {
   border-left: 1px solid #EDEFF1;
   height: 60px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 .header .header-logout a {
@@ -204,6 +232,7 @@ a {
 .header .header-logout a img {
   display: block;
   width: 24px;
+  border: 0px;
   opacity: 0.5;
 }
 .padding-10 {
@@ -278,6 +307,10 @@ a {
   position: relative;
 }
 .auction-card__full-header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
 }
 .auction-card__full-img {
@@ -289,6 +322,10 @@ a {
 }
 .auction-card__full-title {
   width: 100%;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
 }
 .auction-card__full-title-text {
@@ -296,14 +333,34 @@ a {
 }
 .auction-card__full-info {
   width: 100%;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
 .auction-card__full-timer,
 .auction-card__full-base-price,
 .auction-card__full-price {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   border-top: 1px dashed #ddd;
   padding-top: 10px;
@@ -313,12 +370,20 @@ a {
 .auction-card__full-base-price-name,
 .auction-card__full-price-name {
   font-size: 1.5rem;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
 }
 .auction-card__full-timer-count,
 .auction-card__full-base-price-count,
 .auction-card__full-price-count {
   text-align: right;
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+  -moz-box-flex: 2;
+  -ms-flex: 2;
   flex: 2;
 }
 .auction-card__full-timer-value,
@@ -327,6 +392,10 @@ a {
   font-size: 2rem;
   text-align: right;
   color: #61c676;
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+  -moz-box-flex: 2;
+  -ms-flex: 2;
   flex: 2;
 }
 .auction-card__full-timer #timer,
@@ -352,18 +421,37 @@ a {
   margin-top: auto;
 }
 .auction-card__full-bet {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -moz-box-orient: horizontal;
+  -moz-box-direction: normal;
+  -ms-flex-direction: row;
   flex-direction: row;
   margin-top: 15px;
 }
 @media (max-width: 640px) {
   .auction-card__full-bet {
     flex-direction: column;
+    margin-top: 15px;
   }
 }
 .auction-card__full-bet-value {
   position: relative;
+  -webkit-box-flex: 2;
+  -webkit-flex: 2;
+  -moz-box-flex: 2;
+  -ms-flex: 2;
   flex: 2;
   padding-right: 30px;
 }
@@ -372,12 +460,20 @@ a {
     flex: none;
     padding-right: 0px;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 45px;
   }
 }
 .auction-card__full-bet-value-change {
   font-size: 2rem;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -moz-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   color: #8BC34A;
 }
@@ -397,7 +493,11 @@ a {
   user-select: none;
 }
 .auction-card__full-bet-value-change .bet-sum {
+  width: 300px !important;
   font-family: 'Fira Sans Condensed', sans-serif !important;
+  border: none;
+  -webkit-appearance: none;
+  appearance: none;
 }
 .auction-card__full-bet-value-change .add {
   background: #8BC34A;
@@ -440,6 +540,12 @@ a {
   text-align: center;
   color: red;
 }
+@media (max-width: 640px) {
+  .auction-card__full-bet-value-error {
+    top: 50px;
+    width: 100%;
+  }
+}
 .auction-card__full-bet-button .bet button {
   border: none;
 }
@@ -447,7 +553,7 @@ a {
   width: 100%;
 }
 .ajax-form input {
-  border-bottom: 1px solid #333333;
+  border-radius: 3px;
   margin: 10px 0;
 }
 .ajax-form input.error {
@@ -461,7 +567,7 @@ a {
 input {
   width: 100%;
   outline: none;
-  border: none;
+  border: 1px solid #dfdfdf;
   padding: 5px 10px;
 }
 input::-ms-clear,
@@ -475,6 +581,9 @@ input:-webkit-autofill {
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 .select2 {
   width: 100% !important;
@@ -707,6 +816,12 @@ input::-webkit-inner-spin-button {
   list-style-type: none;
   margin-top: 20px;
 }
+.characteristics-list--item {
+  background: #fff;
+  border-radius: 3px;
+  padding: 15px 20px;
+  margin-bottom: 3px;
+}
 .characteristics-list--item-title {
   font-size: 1.5rem;
   font-weight: 400;
@@ -721,7 +836,7 @@ input::-webkit-inner-spin-button {
   background-size: cover;
 }
 .characteristics-list--item-content {
-  padding: 20px 0;
+  padding-top: 20px;
 }
 .characteristics-list--item-content-text {
   margin: 10px 0;

@@ -130,8 +130,8 @@ class LotController extends Controller
 		$data['conditions_shipment'] = $_POST['conditions_shipment'];
 		$data['terms_shipment'] = $_POST['terms_shipment'];
 		$data['step_bet'] = $_POST['step_bet'];
-		$data['start'] = $this->get_datetime($_POST['start']);
-		$data['stop'] = $this->get_datetime($_POST['stop']);
+		$data['start'] = $_POST['start'];
+		$data['stop'] = $_POST['stop'];
 		$data['status'] = $_POST['status'];
 
 		$lot = $this->lot->update($data);

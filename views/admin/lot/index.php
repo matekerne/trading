@@ -7,13 +7,16 @@
 				<div class="grid-fix-medium">
 					<form class="ajax-form" action="/lot/create" method="POST">
 						<input type="hidden" name="lot_id">
+						<label>Название</label>
 						<input type="text" name="name" value="" placeholder="Название">
 						<div class="characteristics_list">
-							<input type="text" name="characteristics[]" placeholder="Характеристики">
+							<label>Характеристики</label>
+							<input type="text" name="characteristics[]" placeholder="Введите характеристики">
 							<div class="button button-color button-round add_characteristics">Добавить</div>
 						</div>
-
+						<label>Цена</label>
 						<input type="number" name="price" value="" min="1" placeholder="Цена">
+						<label>Тип цены</label>
 						<input type="text" name="price_type" placeholder="Тип цены (руб/тонна, евро/кг)">
 
 						<select class="js-example-basic-multiple" multiple="multiple" name="groups[]">
@@ -22,20 +25,21 @@
 								<option value="<?php print $group['id'] ?>"><?php print $group['name'] ?></option>
 							<?php endforeach; ?>
 						</select>
-
+						<label>Шаг ставки</label>
 						<input type="number" name="step_bet" value="" min="1" placeholder="Шаг ставки">
-
+						<label>Количество</label>
 						<input type="number" name="count" value="" min="1" placeholder="Количество">
+						<label>Тип количества</label>
 						<input type="text" name="count_type" placeholder="Тип колличества (тонн, кг и т.п.)">
-
+						<label>Условия оплаты</label>
 						<input type="text" name="conditions_payment" value="" placeholder="Условия оплаты">
-
+						<label>Условия отгрузки</label>
 						<input type="text" name="conditions_shipment" value="" placeholder="Условия отгрузки">
-
+						<label>Сроки отгрузки</label>
 						<input type="text" name="terms_shipment" value="" placeholder="Сроки отгрузки">
-
+						<label>Начало аукциона</label>
 						<input class="datetimepicker" type="text" name="start" placeholder="Начало аукциона">
-
+						<label>Конец аукциона</label>
 						<input class="datetimepicker" type="text" name="stop" placeholder="Конец аукциона">
 
 						<select name="status" class="status-lot">
