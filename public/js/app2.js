@@ -59,7 +59,6 @@ $(document).ready(function() {
 	    var betCount = parseInt(betSum.val()) + parseInt(betStep);
 
 	    betSum.val(betCount);
-	    
 	    betSum.change();
 	    var formBet = betSum.val();
 	    $("form.bet input[name='bet']").val(formBet);

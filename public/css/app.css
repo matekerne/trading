@@ -498,6 +498,7 @@ a {
   border: none;
   -webkit-appearance: none;
   appearance: none;
+  pointer-events: none;
 }
 .auction-card__full-bet-value-change .add {
   background: #8BC34A;
