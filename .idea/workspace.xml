@@ -1,10 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1fbd6cc9-3e35-4185-b047-2db9228599c7" name="Default" comment="">
+    <list default="true" id="1fbd6cc9-3e35-4185-b047-2db9228599c7" name="Default" comment="Styled select2...">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/plugins/accounting/accounting.min.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/inpkhost_trading.sql.zip" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/Helper.php" afterPath="$PROJECT_DIR$/components/Helper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/Admin/LotController.php" afterPath="$PROJECT_DIR$/controllers/Admin/LotController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/Site/HomeController.php" afterPath="$PROJECT_DIR$/controllers/Site/HomeController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/Site/LotController.php" afterPath="$PROJECT_DIR$/controllers/Site/LotController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/Site/WinnerController.php" afterPath="$PROJECT_DIR$/controllers/Site/WinnerController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/Admin/Lot.php" afterPath="$PROJECT_DIR$/models/Admin/Lot.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/Admin/User.php" afterPath="$PROJECT_DIR$/models/Admin/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/Site/Bet.php" afterPath="$PROJECT_DIR$/models/Site/Bet.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/Site/Winner.php" afterPath="$PROJECT_DIR$/models/Site/Winner.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/app.css" afterPath="$PROJECT_DIR$/public/css/app.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/app.less" afterPath="$PROJECT_DIR$/public/css/app.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app.js" afterPath="$PROJECT_DIR$/public/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/app2.js" afterPath="$PROJECT_DIR$/public/js/app2.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/socket.js" afterPath="$PROJECT_DIR$/public/js/socket.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/group/index.php" afterPath="$PROJECT_DIR$/views/admin/group/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/lot/index.php" afterPath="$PROJECT_DIR$/views/admin/lot/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/user/edit.php" afterPath="$PROJECT_DIR$/views/admin/user/edit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin/user/index.php" afterPath="$PROJECT_DIR$/views/admin/user/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layouts/footer.php" afterPath="$PROJECT_DIR$/views/layouts/footer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layouts/header.php" afterPath="$PROJECT_DIR$/views/layouts/header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/site/index.php" afterPath="$PROJECT_DIR$/views/site/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/site/lot/index.php" afterPath="$PROJECT_DIR$/views/site/lot/index.php" />
     </list>
     <ignored path="auction.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,14 +50,14 @@
     <favorites_list name="auction" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4063444">
+    <splitter split-orientation="horizontal" split-proportion="0.46903324">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="app.less" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/public/css/app.less">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="330">
-                  <caret line="637" column="35" selection-start-line="637" selection-start-column="35" selection-end-line="637" selection-end-column="35" />
+                <state relative-caret-position="15">
+                  <caret line="662" column="41" selection-start-line="662" selection-start-column="41" selection-end-line="662" selection-end-column="41" />
                   <folding />
                 </state>
               </provider>
@@ -47,8 +70,8 @@
           <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/public/js/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="286" column="34" selection-start-line="286" selection-start-column="34" selection-end-line="286" selection-end-column="34" />
+                <state relative-caret-position="5190">
+                  <caret line="346" column="34" selection-start-line="346" selection-start-column="34" selection-end-line="346" selection-end-column="34" />
                   <folding />
                 </state>
               </provider>
@@ -74,11 +97,25 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/views/site/lot/index.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-360">
-                  <caret line="71" column="56" selection-start-line="71" selection-start-column="56" selection-end-line="71" selection-end-column="56" />
+                <state relative-caret-position="2445">
+                  <caret line="163" column="0" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
+                  <folding>
+                    <marker date="1504804244000" expanded="true" signature="220:779" ph="..." />
+                    <marker date="1504804244000" expanded="true" signature="258:779" ph="..." />
+                    <marker date="1504804244000" expanded="true" signature="7819:8275" ph="..." />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="app2.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/public/js/app2.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="240">
+                  <caret line="79" column="29" selection-start-line="79" selection-start-column="29" selection-end-line="79" selection-end-column="29" />
                   <folding />
                 </state>
               </provider>
@@ -101,14 +138,14 @@
         <option value="$PROJECT_DIR$/views/admin/group/index.php" />
         <option value="$PROJECT_DIR$/controllers/Admin/GroupController.php" />
         <option value="$PROJECT_DIR$/controllers/Site/LotController.php" />
-        <option value="$PROJECT_DIR$/views/site/lot/index.php" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/controllers/Admin/LotController.php" />
-        <option value="$PROJECT_DIR$/public/js/app2.js" />
         <option value="$PROJECT_DIR$/public/js/app.js" />
         <option value="$PROJECT_DIR$/config/DB.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/views/site/lot/index.php" />
         <option value="$PROJECT_DIR$/public/css/app.less" />
+        <option value="$PROJECT_DIR$/public/js/app2.js" />
       </list>
     </option>
   </component>
@@ -234,7 +271,8 @@
       <workItem from="1504336422660" duration="40561000" />
       <workItem from="1504426092940" duration="14480000" />
       <workItem from="1504546144844" duration="106000" />
-      <workItem from="1504546522173" duration="2383000" />
+      <workItem from="1504546522173" duration="5699000" />
+      <workItem from="1504804403753" duration="107000" />
     </task>
     <task id="LOCAL-00001" summary="Fix date on update">
       <created>1504447376013</created>
@@ -257,11 +295,32 @@
       <option name="project" value="LOCAL" />
       <updated>1504548546554</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Styled select2...">
+      <created>1504549215470</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1504549215470</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Styled characteristics list">
+      <created>1504550571022</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1504550571022</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Input">
+      <created>1504584196912</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1504584196912</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71286000" />
+    <option name="totallyTimeSpent" value="74709000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1366" height="710" extended-state="6" />
@@ -269,7 +328,6 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15483384" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20873787" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -277,6 +335,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27831715" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32847896" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -328,13 +387,68 @@
     <MESSAGE value="Fix date on update" />
     <MESSAGE value="New version" />
     <MESSAGE value="Styled select2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Styled select2" />
+    <MESSAGE value="Styled select2..." />
+    <MESSAGE value="Styled characteristics list" />
+    <MESSAGE value="Input" />
+    <option name="LAST_COMMIT_MESSAGE" value="Input" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/public/css/app.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7845">
+          <caret line="523" column="41" selection-start-line="523" selection-start-column="41" selection-end-line="523" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4290">
+          <caret line="286" column="34" selection-start-line="286" selection-start-column="34" selection-end-line="286" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="23" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/site/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/site/lot/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2055">
+          <caret line="137" column="31" selection-start-line="137" selection-start-column="31" selection-end-line="137" selection-end-column="31" />
+          <folding>
+            <marker date="1504804244000" expanded="true" signature="220:779" ph="..." />
+            <marker date="1504804244000" expanded="true" signature="258:779" ph="..." />
+            <marker date="1504804244000" expanded="true" signature="7819:8275" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/app2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/app.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6300">
@@ -379,7 +493,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1350">
           <caret line="90" column="76" selection-start-line="90" selection-start-column="76" selection-end-line="90" selection-end-column="76" />
-          <folding />
+          <folding>
+            <marker date="1504804244000" expanded="true" signature="220:779" ph="..." />
+            <marker date="1504804244000" expanded="true" signature="258:779" ph="..." />
+            <marker date="1504804244000" expanded="true" signature="7819:8275" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -416,7 +534,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1815">
           <caret line="121" column="28" selection-start-line="116" selection-start-column="16" selection-end-line="121" selection-end-column="28" />
-          <folding />
+          <folding>
+            <marker date="1504804244000" expanded="true" signature="220:779" ph="..." />
+            <marker date="1504804244000" expanded="true" signature="258:779" ph="..." />
+            <marker date="1504804244000" expanded="true" signature="7819:8275" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -469,7 +591,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1504804244000" expanded="true" signature="220:779" ph="..." />
+            <marker date="1504804244000" expanded="true" signature="258:779" ph="..." />
+            <marker date="1504804244000" expanded="true" signature="7819:8275" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -585,16 +711,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="7" selection-start-line="0" selection-start-column="7" selection-end-line="0" selection-end-column="7" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md" />
     <entry file="file://$PROJECT_DIR$/models/Admin/Lot.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2190">
@@ -602,18 +719,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/app2.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="249" column="56" selection-start-line="249" selection-start-column="56" selection-end-line="249" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/DB.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -621,7 +730,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -629,14 +737,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="133" column="39" selection-start-line="133" selection-start-column="39" selection-end-line="133" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="286" column="34" selection-start-line="286" selection-start-column="34" selection-end-line="286" selection-end-column="34" />
+        <state relative-caret-position="5190">
+          <caret line="346" column="34" selection-start-line="346" selection-start-column="34" selection-end-line="346" selection-end-column="34" />
           <folding />
         </state>
       </provider>
@@ -659,16 +766,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/site/lot/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-360">
-          <caret line="71" column="56" selection-start-line="71" selection-start-column="56" selection-end-line="71" selection-end-column="56" />
-          <folding />
+        <state relative-caret-position="2445">
+          <caret line="163" column="0" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
+          <folding>
+            <marker date="1504804244000" expanded="true" signature="220:779" ph="..." />
+            <marker date="1504804244000" expanded="true" signature="258:779" ph="..." />
+            <marker date="1504804244000" expanded="true" signature="7819:8275" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/app.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="637" column="35" selection-start-line="637" selection-start-column="35" selection-end-line="637" selection-end-column="35" />
+        <state relative-caret-position="15">
+          <caret line="662" column="41" selection-start-line="662" selection-start-column="41" selection-end-line="662" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/app2.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="79" column="29" selection-start-line="79" selection-start-column="29" selection-end-line="79" selection-end-column="29" />
           <folding />
         </state>
       </provider>

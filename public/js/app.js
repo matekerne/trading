@@ -1,3 +1,39 @@
+  
+
+  function userBetCount() {
+
+    $('.user-bet-item').each(function() {
+      var currentUserBet = $(this).children('.table-align-center').children('.user-bet-value').text();
+      var lastUserBet = $(this).next().find('.user-bet-value').text();
+      var betCount = $(this).children('.table-align-center').children('.user-bet-count');
+      var startPrice = $('#startPrice').text();
+      var lastItem = $('.user-bet-item:last-child');
+      var lastItemCount = currentUserBet - startPrice;
+      var userBetCount = currentUserBet - lastUserBet;
+      var totalCount;
+
+      $(this).children('.table-align-center').children('.user-bet').text(accounting.formatNumber(currentUserBet, {
+        thousand : " "
+      }));
+      
+
+      if ($(this).is(':last-child')) {
+        var totalCount = '+ ' + lastItemCount;
+      } else {
+        var totalCount = '+ ' + userBetCount;
+      }
+
+      betCount.text('+ ' + accounting.formatNumber(totalCount, {
+        thousand: " "
+      }));
+      
+    });
+  }
+
+  userBetCount();
+  
+
+
   if ($('.auction-card').length < 4) {
     $('.auction-card').parent().parent().addClass('center');
   }
@@ -132,13 +168,18 @@
     var action = '/winner/notify';
     var method = 'POST';
 
-    var email = $('#history-bets .bet:first-child').data('user-email');
+    var user_id = $('#history-bets .bet:first-child').data('user-id');
+    var lot_id = $('input[name=lot_id]').val();
+    var information = $('.characteristics-list').html();
 
+    // console.log(lot_id);
     $.ajax({
       url: action,
       type: method,
       data: {
-        email: email,
+        user_id: user_id,
+        lot_id: lot_id,
+        information: information,
       },
 
       success: function(data) {
@@ -152,6 +193,8 @@
       },
     });
   }
+
+  notifyWinner();
 
   // Общий для всех остальных форм
   $(document).on('submit', '.ajax-form', function(e) {
@@ -247,6 +290,7 @@
       success: function(data) {
         var response = $.parseJSON(data);
         console.log(response);
+        userBetCount();
       },
 
       error: function(e) {
@@ -274,73 +318,123 @@
     }
    },
    timepicker: true,
-   format: 'd-m-Y H:i'
+   format: 'Y-m-d H:i:s'
   });
 
+  // Время начала
+  
+  var mounthStart = $('#mounthStartAuction').text();
+  var dayStart = $('#dayStartAuction').text();
+  var yearStart = $('#yearStartAuction').text();
+  var timeStart = $('#timeStartAuction').text();
+  var dateTimeStart = mounthStart + ' ' + dayStart + ' ' + yearStart + ' ' + timeStart;
+  var countUpDate = new Date(dateTimeStart).getTime();
+  
+
+  
+  // Время начала
+
+  // Время конца
   var mounth = $('#mounthStopAuction').text();
   var day = $('#dayStopAuction').text();
   var year = $('#yearStopAuction').text();
   var time = $('#timeStopAuction').text();
   var dateTime = mounth + ' ' + day + ' ' + year + ' ' + time;
   var countDownDate = new Date(dateTime).getTime();
+  
+  // Время конца
 
-  var x = setInterval(function() {
-    var now = new Date();
-    var distance = countDownDate - now.getTime();
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    if (document.getElementById('timer') !== null) {  
-      document.getElementById('timer').innerHTML = days + ' <span> д. </span> ' + hours + ' <span> ч. </span> '
-      + minutes + ' <span> м. </span> ' + seconds + ' <span> с. </span> ';
+    if (document.getElementById('timeStartText') !== null) {
+      document.getElementById('timeStartText').innerHTML = 'До старта аукциона';
     }
+    
 
-    if (distance < 0) {
-      var method = 'POST';
-      var action = '/lot/check-time-stop';
-      var lot_id = $('.bet input[name=lot_id]').val();
+    var y = setInterval(function() {
+      var nowStart = new Date();
+      var distanceStart = countUpDate - nowStart.getTime();
+      var daysStart = Math.floor(distanceStart / (1000 * 60 * 60 * 24));
+      var hoursStart = Math.floor((distanceStart % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutesStart = Math.floor((distanceStart % (1000 * 60 * 60)) / (1000 * 60));
+      var secondsStart = Math.floor((distanceStart % (1000 * 60)) / 1000);
 
-      $.ajax({
-        type: method,
-        url: action,
-        data: {
-          lot_id: lot_id,
-        },
+      
 
-        success: function(data) {
-          var response = $.parseJSON(data);
-          if (response['status'] == 'success') {       
-            clearInterval(x);
-            document.getElementById('timer').innerHTML = 'Аукцион закончен';
+      if (document.getElementById('timer') !== null) {  
+        document.getElementById('timer').innerHTML = daysStart + ' <span> д. </span> ' + hoursStart + ' <span> ч. </span> '
+        + minutesStart + ' <span> м. </span> ' + secondsStart + ' <span> с. </span> ';
+      }
 
-            var winUser = $('#history-bets .bet:first-child').data('user-login');
-            console.log(winUser);
-            var lot_status = $('.bet input[name=lot_status]').val();
-            var user_id = $('#history-bets .bet:first-child').data('user-id');
+
+      if (distanceStart < 0) {
+        document.getElementById('timer').innerHTML = '';
+        $('.auction-card__full-bet').removeClass('bet__hide');
+        document.getElementById('timeStartText').innerHTML = 'До конца аукциона';
+        clearInterval(y);
+        var x = setInterval(function() {
+          var now = new Date();
+          var distance = countDownDate - now.getTime();
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          
+            document.getElementById('timer').innerHTML = days + ' <span> д. </span> ' + hours + ' <span> ч. </span> '
+            + minutes + ' <span> м. </span> ' + seconds + ' <span> с. </span> ';
+          
+
+          if (distance <= 0) {
+            var method = 'POST';
+            var action = '/lot/check-time-stop';
             var lot_id = $('.bet input[name=lot_id]').val();
 
-            if (winUser && lot_status == 1) {
-              // document.getElementById('winner').innerHTML = '<div id="winner">Лот выиграл ' + winUser + '</div>';
-              $('.auction-card__full').append('<div id="winner">Лот выиграл ' + winUser + '</div>');
-              createWinner(user_id, lot_id);
-              changeLotStatus(lot_id);
-              notifyWinner();
-            } else if (!winUser && lot_status == 1) {
-              document.getElementById('winner').innerHTML = 'Победителей нет!';
-              changeLotStatus(lot_id);
-            } else if (winUser && lot_status == 3) {
-              document.getElementById('winner').innerHTML = 'Лот выиграл ' + winUser;
-            } else if (!winUser && lot_status == 3) {
-              document.getElementById('winner').innerHTML = 'Победителей нет!';
-            }
+            $.ajax({
+              type: method,
+              url: action,
+              data: {
+                lot_id: lot_id,
+              },
+
+              success: function(data) {
+                var response = $.parseJSON(data);
+
+                if (response['status'] == 'success') {       
+                  clearInterval(x);
+                  document.getElementById('timer').innerHTML = 'Аукцион закончен';
+
+                  var winUser = $('#history-bets .bet:first-child').data('user-login');
+                  var lot_status = $('.bet input[name=lot_status]').val();
+                  var user_id = $('#history-bets .bet:first-child').data('user-id');
+                  var lot_id = $('.bet input[name=lot_id]').val();
+
+                  if (winUser && lot_status == 1) {
+                    $('.auction-card__full-bet').remove();
+                    $('.auction-card__full').append('<div id="winner">Лот выиграл ' + winUser + '</div>');
+                    createWinner(user_id, lot_id);
+                    changeLotStatus(lot_id);
+                    notifyWinner();
+                  } else if (!winUser && lot_status == 1) {
+                    $('.auction-card__full-bet').remove();
+                    $('.auction-card__full').append('<div id="winner">Победителей нет!</div>');
+                    changeLotStatus(lot_id);
+                  } else if (winUser && lot_status == 3) {
+                    $('.auction-card__full-bet').remove();
+                    $('.auction-card__full').append('<div id="winner">Лот выиграл ' + winUser + '</div>');
+                  } else if (!winUser && lot_status == 3) {
+                    $('.auction-card__full-bet').remove();
+                    $('.auction-card__full').append('<div id="winner">Победителей нет!</div>');
+                  }
+                }
+              },
+
+              error: function(e) {
+
+              },
+            });
           }
-        },
+        }, 1000);
+      }
 
-        error: function(e) {
-
-        },
-      });
-    }
-  }, 1000);
+    }, 1000);
+    
+  

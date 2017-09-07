@@ -13,7 +13,29 @@
 							</div>
 							<div class="auction-card-title padding-15"><?php print $lot['name']; ?></div>
 							<div class="auction-card-price padding-15">
-								<span class="price-text">Текущая цена</span><div class="card-price"><span class="card-lot-cost"><?php print $lot['price']; ?></span> <span>руб.</span></div>
+								<span class="price-text">Стартовая цена</span>
+								<div class="card-price">
+									<span id="startLotPrice" style="display: none;"><?php print $lot['price']; ?></span>
+									<span id="startLotCost" class="card-lot-cost"></span>
+									<span>руб.</span>
+								</div>
+							</div>
+
+							<div class="auction-card-price padding-15">
+								<span class="price-text">Текущая цена</span>
+								<div class="card-price">
+									<span id="currentCost" style="display: none;">
+										<?php $bets = $bet->get_all_by_each_lot($lot['id']); ?>
+										<?php $last_bet = reset($bets); ?>
+										<?php if ($last_bet): ?>
+											<?php print $last_bet['bet']; ?>
+										<?php else: ?>
+											<?php print $lot['price']; ?>
+										<?php endif; ?>
+									</span>
+									<span id="currentLotCost" class="card-lot-cost"></span> 
+									<span>руб.</span>
+								</div>
 							</div>
 							<div class="auction-card-timer padding-10"></div>
 							<div class="auction-card-link">

@@ -17,21 +17,54 @@ window.onload = function() {
 	// };
 
 	socket.onmessage = function(event) {
-		let message = JSON.parse(event.data);
+		// let message = JSON.parse(event.data);
+		// $('#lastBet').text(`${message.bet}`);
+		// $('.bet-sum').val(`${message.bet}`);
 
-		$('#lastBet').text(`${message.bet}`);
-		$('.bet-sum').val(`${message.bet}`);
+		// let newFormatBet = (parseInt(message.bet)).toLocaleString();
 
-		$('#history-bets').prepend(`
-			<tr class="bet table-item" data-user-email="${message.userEmail}" 
-				data-user-login="${message.userLogin}" 
-				data-user-id="${message.userId}">
-				
-				<td class="table-align-left">${message.userLogin}</td>
-				<td class="table-align-center">${message.bet} руб.</td>
-				<td class="table-align-right">${message.dateBet}</td>
-			</tr>
-		`);
+		// $('#history-bets').prepend(`
+		// 	<tr class="bet table-item user-bet-item" data-user-login="${message.userLogin}" 
+		// 	data-user-id="${message.userId}">
+		// 		<td class="table-align-left">${message.userLogin}</td>
+		// 		<td class="table-align-center"><div class="user-bet">${message.bet}</div> руб.<span class="user-bet-count"></span></td>
+		// 		<td class="table-align-right">${message.dateBet}</td>
+		// 	</tr>
+		// `);
+
+		var message = JSON.parse(event.data);
+		//var betSum = parseInt(message['bet']).toLocaleString();
+		var betSum = accounting.formatNumber(message['bet'], {
+			thousand : " "
+		});
+		
+		$('#lastBet').text(message['bet']);
+		$('.bet-sum').val(message['bet']);
+		$('#currentCost').text(message['bet']);
+		$('#currentLotCost').text(accounting.formatNumber(message['bet'], {
+			thousand: " "
+		}));
+		$('.betCount').text(betSum);
+
+		// $('#history-bets').prepend(`
+		// 	<tr class="bet table-item user-bet-item" data-user-login="${message.userLogin}" 
+		// 	data-user-id="${message.userId}">
+		// 		<td class="table-align-left">${message.userLogin}</td>
+		// 		<td class="table-align-center"><div class="user-bet-value" style="display: none;">${message.bet}</div><div class="user-bet"></div> руб.<span class="user-bet-count"></span></td>
+		// 		<td class="table-align-right">${message.dateBet}</td>
+		// 	</tr>
+		// `);
+
+		$('#history-bets').prepend(
+			'<tr class="bet table-item user-bet-item" data-user-login="' + message['userLogin'] + '" data-user-id="' + message['userId'] + '">'+ 
+				'<td class="table-align-left">' + message['userLogin'] + '</td>'+
+				'<td class="table-align-center"><div class="user-bet-value" style="display: none;">' + message['bet'] + '</div><div class="user-bet"></div> руб.<span class="user-bet-count"></span></td>'+
+				'<td class="table-align-right">' + message['dateBet'] + '</td>'+
+			'</tr>'
+		);
+
+		userBetCount();
+
 	};
 
 	// socket.onerror = function(event) {
@@ -42,17 +75,16 @@ window.onload = function() {
 
 	if (formName == 'messages') {
 		document.forms['messages'].onsubmit = function() {
-			let message = {
+			var message = {
 			   userId: this.user_id.value,
 			   userLogin: this.user_login.value,
 			   userEmail: this.user_email.value,
 			   dateBet: this.date_bet.value,
+			   // previousBet: this.previous_bet.value,
 			   bet: this.bet.value,
 			}
 
-			// console.log(message);
-
-			let lastBet = $('#lastBet').text();
+			var lastBet = $('#lastBet').text();
 			
 			if (Number(this.bet.value) > Number($.trim(lastBet)) && Number(this.bet.value) != Number($.trim(lastBet))) {		
 				socket.send(JSON.stringify(message));

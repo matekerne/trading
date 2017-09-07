@@ -95,7 +95,7 @@ class User extends Model
     {
         $db = \DB::get_connection();
 
-        $sql = "SELECT u.id, u.login, u.name, u.email, GROUP_CONCAT(DISTINCT g.name SEPARATOR ', ') AS groups FROM users u JOIN users_groups u_g ON u.id = u_g.user_id JOIN groups g ON g.id = u_g.group_id WHERE u.id = :id GROUP BY u.id";
+        $sql = "SELECT u.id, u.login, u.name, u.email, GROUP_CONCAT(DISTINCT g.id SEPARATOR ', ') AS groups FROM users u LEFT JOIN users_groups u_g ON u.id = u_g.user_id LEFT JOIN groups g ON g.id = u_g.group_id WHERE u.id = :id GROUP BY u.id";
         
         $query = $db->prepare($sql);
 

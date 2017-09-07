@@ -3,7 +3,7 @@
 <main class="main-content">
 	<section class="section">
 		<div class="grid-body grid-bg">
-			<div class="grid-content">
+			<div class="grid-content grid-content__column">
 				<div class="grid-fix-medium">
 					<form class="ajax-form" action="/group/create" method="POST">
 						<input type="hidden" name="id">

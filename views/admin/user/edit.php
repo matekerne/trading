@@ -17,7 +17,6 @@
 			<?php foreach ($groups as $group): ?>
 				<?php $selected = ''; ?>
 				<?php foreach ($user_groups as $user_group): ?>
-				
 					<?php if ($group['id'] == $user_group['id']): ?>
 						<?php $selected = 'selected'; ?>
 					<?php endif; ?>

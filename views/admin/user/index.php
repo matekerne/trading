@@ -3,7 +3,7 @@
 <main class="main-content">
 	<section class="section">
 		<div class="grid-body grid-bg">
-			<div class="grid-content">
+			<div class="grid-content grid-content__column">
 				<div class="grid-fix-medium">
 					<form class="ajax-form" action="/user/create" method="POST">
 
@@ -18,7 +18,6 @@
 						<input type="text" name="email" value="" placeholder="Email">
 
 						<select class="js-example-basic-multiple" multiple="multiple" name="groups[]">
-
 							<?php foreach($groups as $group): ?>
 								<option value="<?php print $group['id'] ?>"><?php print $group['name'] ?></option>
 							<?php endforeach; ?>

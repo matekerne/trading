@@ -20,15 +20,12 @@ class LotController extends Controller
 	{
 		$id = \Router::get_id();
 		$lots = $this->lot->show($id);
+		// var_dump($lots); die();
 		$this->check_data($lots);
 
 		$bet = new Bet();
 		$bets = $bet->get_all_by_each_lot($id);
-		// var_dump($lots); die();
 		$this->check_data($bets);
-
-		$date_time = str_replace(" ","-",$lots[0]['stop']);
-		$date_time_stop_auction = explode('-', $date_time);
 
 		$names_mouths = [
 			'Jan' => '01',
@@ -45,11 +42,20 @@ class LotController extends Controller
 			'Dec' => '12',
 		];
 
-		$year = $date_time_stop_auction[0];
-		$mounth = array_search($date_time_stop_auction[1], $names_mouths);
-		$day = $date_time_stop_auction[2];
-		$time = $date_time_stop_auction[3];
-		
+		$date_time_stop = str_replace(" ","-",$lots[0]['stop']);
+		$date_time_stop_auction = explode('-', $date_time_stop);
+		$year_stop = $date_time_stop_auction[0];
+		$mounth_stop = array_search($date_time_stop_auction[1], $names_mouths);
+		$day_stop = $date_time_stop_auction[2];
+		$time_stop = $date_time_stop_auction[3];
+
+		$date_time_start = str_replace(" ","-",$lots[0]['start']);
+		$date_time_start_auction = explode('-', $date_time_start);
+		$year_start = $date_time_start_auction[0];
+		$mounth_start = array_search($date_time_start_auction[1], $names_mouths);
+		$day_start= $date_time_start_auction[2];
+		$time_start = $date_time_start_auction[3];
+		// var_dump($date_time_start_auction); die();
 		require_once(ROOT . '/views/site/lot/index.php');
 		return true;
 	}

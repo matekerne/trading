@@ -18,6 +18,9 @@ class HomeController extends Controller
 	public function index()
 	{
 		$lots = $this->lot->get_all();
+		$bet = new Bet();
+		// $bets = $bet->get_all();
+		// var_dump($bets); die();
 	    require_once(ROOT . '/views/site/index.php');
 	}
 }

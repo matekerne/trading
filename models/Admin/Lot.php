@@ -114,7 +114,7 @@ class Lot extends Model
     {
         $db = \DB::get_connection();
 
-        $sql = "SELECT l.id, l.name, l.characteristics, l.price, l.price_type, l.step_bet, l.count, l.count_type, l.conditions_payment, l.conditions_shipment, l.terms_shipment, l.start, l.stop, l.status, GROUP_CONCAT(DISTINCT g.id, g.name SEPARATOR ', ') AS groups FROM lots l JOIN lots_groups l_g ON l.id = l_g.lot_id JOIN groups g ON l_g.group_id = g.id WHERE l.id = :id GROUP BY l.id";
+        $sql = "SELECT l.id, l.name, l.characteristics, l.price, l.price_type, l.step_bet, l.count, l.count_type, l.conditions_payment, l.conditions_shipment, l.terms_shipment, l.start, l.stop, l.status, GROUP_CONCAT(DISTINCT g.id SEPARATOR ', ') AS groups FROM lots l JOIN lots_groups l_g ON l.id = l_g.lot_id JOIN groups g ON l_g.group_id = g.id WHERE l.id = :id GROUP BY l.id";
         
         $query = $db->prepare($sql);
 

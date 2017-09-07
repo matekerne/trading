@@ -10,7 +10,7 @@ class Bet extends Model
 	{
 		$db = \DB::get_connection();
 
-		$sql = 'SELECT l_u_b.bet, l_u_b.user_id, l_u_b.create_date, u.name, u.email FROM lots_users_bets l_u_b JOIN users u ON l_u_b.user_id = u.id ORDER BY l_u_b.id DESC';
+		$sql = 'SELECT l_u_b.bet, l_u_b.lot_id, l_u_b.user_id, l_u_b.create_date, u.name, u.email FROM lots_users_bets l_u_b JOIN users u ON l_u_b.user_id = u.id ORDER BY l_u_b.id DESC';
 
 		$query = $db->prepare($sql);
 
@@ -23,6 +23,7 @@ class Bet extends Model
 		$i = 0;
 		while ($row = $query->fetch(\PDO::FETCH_ASSOC)) {
 			$bets[$i]['user_id'] = $row['user_id'];
+			$bets[$i]['lot_id'] = $row['lot_id'];
 			$bets[$i]['bet'] = $row['bet'];
 			$bets[$i]['create_date'] = $row['create_date'];
 			$bets[$i]['user_name'] = $row['name'];

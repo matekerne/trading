@@ -127,28 +127,29 @@ trait Helper
 		return $result;
     }
 
-    public function send_mail(array $emails, $subject='Итоги аукциона', $message='Поздравляем с победой!')
+    public function send_mail($to, $subject, $message)
     {
 	    $headers = "From: info@trade.inpk-trading.ru \r\n"; 
         $headers .= "MIME-Version: 1.0 \r\n"; 
         $headers .= "Content-Type: text/html; charset=UTF-8 \r\n"; 
         $headers .= "X-Priority: 1 \r\n";
 
-        $today = date('d.m.y', time() - 60 * 60 * 24);
+        // $today = date('d.m.y', time() - 60 * 60 * 24);
+        // return mail($to, $subject . ' ' . $today, $message, $headers);
+        return mail($to, $subject, $message, $headers);
+     //    $result = 0;
+     //    foreach ($emails as $to) {
+     //    	if (mail($to, $subject . ' ' . $today, $message, $headers)) {
+     //    		$result += 1;
+     //    	} else {
+     //    		$result = 0;
+     //    	}
+     //    }
 
-        $result = 0;
-        foreach ($emails as $to) {
-        	if (mail($to, $subject . ' ' . $today, $message, $headers)) {
-        		$result += 1;
-        	} else {
-        		$result = 0;
-        	}
-        }
-
-    	if ($result) {
-    		return true;
-    	} else {
-    		return false;
-    	}
+    	// if ($result) {
+    	// 	return true;
+    	// } else {
+    	// 	return false;
+    	// }
     }
 }
