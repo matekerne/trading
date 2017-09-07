@@ -169,7 +169,7 @@
     var method = 'POST';
 
     var user_id = $('#history-bets .bet:first-child').data('user-id');
-    var lot_id = $('input[name=lot_id]').val();
+    var lot_id = $('input[name="lot_id"]').val();
     var information = $('.characteristics-list').html();
 
     // console.log(lot_id);
