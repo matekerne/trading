@@ -69,7 +69,7 @@ $(document).ready(function () {
         if (distance < 0) {
             var method = 'POST';
             var action = '/lot/check-time-stop';
-            var lot_id = $('.bet input[name=lot_id]').val();
+            var lot_id = $('.bet input[name="lot_id"]').val();
 
             $.ajax({
                 type: method,
@@ -83,12 +83,12 @@ $(document).ready(function () {
 
                     if (response['status'] == 'success') {
                         clearInterval(x);
-                        document.getElementById('timer').innerHTML = 'Аукцион закончен';
+                        document.getElementById('startTimer').innerHTML = 'Аукцион закончен';
 
                         var winUser = $('#history-bets .bet:first-child').data('user-login');
-                        var lot_status = $('.bet input[name=lot_status]').val();
+                        var lot_status = $('.bet input[name="lot_status"]').val();
                         var user_id = $('#history-bets .bet:first-child').data('user-id');
-                        var lot_id = $('.bet input[name=lot_id]').val();
+                        var lot_id = $('.bet input[name="lot_id"]').val();
 
                         if (winUser && lot_status == 1) {
                             $('.auction-card__full-bet').remove();
