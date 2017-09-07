@@ -551,8 +551,23 @@ loader {
 			-ms-flex: 2;
 			flex: 2;
 		}
+		#startTimer {
+			font-size: 2rem;
+			display: none;
+			&.active {
+				display: block!important;
+			}
+			span {
+				color: darken(@grey-card, 15%);
+				font-size: 0.75rem;
+			}
+		}
 		#timer {
 			font-size: 2rem;
+			display: none;
+			&.active {
+				display: block!important;
+			}
 
 			span {
 				color: darken(@grey-card, 15%);

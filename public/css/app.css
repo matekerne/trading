@@ -515,10 +515,33 @@ loader.load {
   -ms-flex: 2;
   flex: 2;
 }
+.auction-card__full-timer #startTimer,
+.auction-card__full-base-price #startTimer,
+.auction-card__full-price #startTimer {
+  font-size: 2rem;
+  display: none;
+}
+.auction-card__full-timer #startTimer.active,
+.auction-card__full-base-price #startTimer.active,
+.auction-card__full-price #startTimer.active {
+  display: block !important;
+}
+.auction-card__full-timer #startTimer span,
+.auction-card__full-base-price #startTimer span,
+.auction-card__full-price #startTimer span {
+  color: #b9b9b9;
+  font-size: 0.75rem;
+}
 .auction-card__full-timer #timer,
 .auction-card__full-base-price #timer,
 .auction-card__full-price #timer {
   font-size: 2rem;
+  display: none;
+}
+.auction-card__full-timer #timer.active,
+.auction-card__full-base-price #timer.active,
+.auction-card__full-price #timer.active {
+  display: block !important;
 }
 .auction-card__full-timer #timer span,
 .auction-card__full-base-price #timer span,
