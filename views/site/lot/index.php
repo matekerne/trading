@@ -34,7 +34,8 @@
 					<div class="auction-card__full-timer">
 						<div id="timeStartText" class="auction-card__full-timer-name"></div>
 						<div class="auction-card__full-timer-count">
-							<div id="timer"></div>
+							<div id="startTimer"></div>
+							<div id="timer" class="active"></div>
 							<div class="auction-card__full-timer-finish">
 								<?php 
 									$datetime = explode(' ', $lot['stop']);
