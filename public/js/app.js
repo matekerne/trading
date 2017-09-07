@@ -321,7 +321,7 @@
    format: 'Y-m-d H:i:s'
   });
 
-  // Время начала
+  /*// Время начала
   
   var mounthStart = $('#mounthStartAuction').text();
   var dayStart = $('#dayStartAuction').text();
@@ -357,7 +357,7 @@
       var minutesStart = Math.floor((distanceStart % (1000 * 60 * 60)) / (1000 * 60));
       var secondsStart = Math.floor((distanceStart % (1000 * 60)) / 1000);
 
-      
+
 
       if (document.getElementById('timer') !== null) {  
         document.getElementById('timer').innerHTML = daysStart + ' <span> д. </span> ' + hoursStart + ' <span> ч. </span> '
@@ -435,6 +435,6 @@
         }, 1000);
       }
 
-    }, 1000);
+    }, 1000);*/
     
   
