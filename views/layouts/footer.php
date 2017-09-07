@@ -10,6 +10,7 @@
 			<script src="/public/plugins/datetimepicker/build/jquery.datetimepicker.full.min.js"></script>
 			<script src="/public/plugins/accounting/accounting.min.js"></script>
 			<script type="text/javascript" src="/public/js/app.js?<?php print filemtime(ROOT . '/public/js/app.js'); ?>"></script>
+			<script type="text/javascript" src="/public/js/test.js?<?php print filemtime(ROOT . '/public/js/test.js'); ?>"></script>
 			<script type="text/javascript" src="/public/js/app2.js?<?php print filemtime(ROOT . '/public/js/app2.js'); ?>"></script>
 			<script type="text/javascript" src="/public/js/socket.js?<?php print filemtime(ROOT . '/public/js/socket.js'); ?>"></script>
 
